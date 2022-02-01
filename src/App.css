@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+:root {
+--Softblue: hsl(215, 51%, 70%);
+--Cyan: hsl(178, 100%, 50%);
+--main: hsl(217, 54%, 11%);
+--card: hsl(216, 50%, 16%);
+--line: hsl(215, 32%, 27%);
+--White: hsl(0, 0%, 100%);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: var(--main);
+  overflow: hidden;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main{
+  background-color: var(--main);
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+  
+.card {
+  width: 320px;
+  height: 530px;
+  background-color: var(--card);
+  border-radius: 20px;
+  margin: auto;
+  box-shadow: var(--card) 0px 0px 20px;
+  animation: bounce 8s ease-in-out infinite;
+}
+.card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 20px 0 20px;
+  position: relative;
+}
+.view {
+  position: absolute;
+  background-color: var(--Cyan);
+  width: 280px;
+  height: 280px;
+  border-radius: 11px;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-body::after{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: var(--line);
+  margin-top: 20px;
+}
+.img-nft {
+  width: 280px;
+  height: auto;
+  border-radius: 10px;
+  background-color: var(--Cyan);
+  z-index: 9999;
+}
+.img-nft:hover{
+  opacity: 0.5;
+  transition: opacity 0.6s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+h2{
+  color: var(--White);
+  font-size: 18px;
+  margin: 10px 0;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2:hover{
+  cursor: pointer;
+  color: var(--Cyan);
+}
+.description {
+  color: var(--Softblue);
+  font-size: 15px;
+  margin: 0;
+}
+.info-nft {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  list-style: none;
+}
+li img{
+  margin-right: 5px;
+}
+.price {
+ color: var(--Cyan);
+ font-size: 15px;
+ font-weight: 700;
+ vertical-align: middle;
+}
+.days-left {
+  color: var(--Softblue);
+  font-size: 15px;
+  font-weight: 400;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 0 20px;
+  margin-top: 10px;
+}
+.img-avatar {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--White);
+  border-radius: 50%;
+  margin: 0 20px 0 0;
+}
+.copyright{
+  color: var(--Softblue);
+  font-size: 15px;
+}
+.copyright a {
+  color: var(--White);
+  text-decoration: none;
+}
+.copyright a:hover {
+  cursor: pointer;
+  color: var(--Cyan);
 }
